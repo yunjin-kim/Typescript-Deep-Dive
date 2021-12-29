@@ -72,3 +72,40 @@ npm i -D typescript ts-node
 npm i -D @types/node
 ```
 
+
+### tsconfig.json
+
+```js
+{   // compilerOptions 항목은 tsc 명령 형식에서 옵션을 나타낸다
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop" true,
+        "target": "es5",
+        "moduleResolution": "node",
+        "outDir": "dist",
+        "baseUrl": ".",
+        "sourceMap": true,
+        "downlevelInteration": true,
+        "noImplicitAny": false,
+        "paths": {"*": ["node_modules/*"]}
+    },
+    "include": ["src/**/*"] // 대상 파일 목록을 나타낸다
+}
+```
+- module 키는 동작 대상 플랫폼이 웹 브라우저(amd)인지 node.js(commonjs)인지 구분해 그에 맞는 모듈 방식으로 컴파일하려는 목적으로 설정한다
+
+- esModuleInterop 키는 오픈 소스 자바스크립트 라이브러리 중에는 웹 브라우저에서 동작한다는 가정하에 만들어진 것이 있는데 commonJS 방식으로 동작하는 타입스크립트 코드에 혼란을 줄 수 있어 chance 패키지를 동작하려면 true로 설정해야 한다
+
+- target 키는 트랜스파일할 대상 자바스크립트 버전을 설정한다
+
+- moduleResolution 키는 module 키값이 commonjs면 node, amd면 classic으로 설저안다
+
+- baseUrl, outDir 키는 트랜스파일된 자바스크립트 파일을 저장할 디렉토리를 설정한다
+
+- paths 키는 소스 파일의 import 문에서 from 부분을 해석할 때 찾아야 하는 디렉토리를 설정한다
+
+- sourceMap 키는 true로 설정하면 소스맵 파일이 만들어지고 주로 디버깅할 때 사용한다
+
+- downlevelInteration 키는 generator이 정상적으로 동작하려면 true로 설정한다
+
+- noImplicitAny 키는 false로 설정하면 타입을 명시하지 않은 경우 오류를 뿜는다
