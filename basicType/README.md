@@ -176,7 +176,7 @@ let n: null = null;
 유니온 타입인 **string | null | undefined**를 사용할 수 있다
 
 
-## Newver
+## Never
 
 **never**타입은 절대 발생할 수 없는 타입을 나타낸다
 예를 들어 **never**는 함수 표현식이나 화살표 함수 표현식에서 항상 오류를 발생시키거나
