@@ -21,7 +21,7 @@ getText<number>(10);
 getText<boolean>(true);
 ```
 
-먼저 위 함수에서 제네릭 타입이 **<string>**이 되는 이유는 **getText()** 함수를 호출할 때 
+먼저 위 함수에서 제네릭 타입이 **string**이 되는 이유는 **getText()** 함수를 호출할 때 
 제네릭(함수에서 사용할 타입) 값으로 **string**을 넘겼기 때문이다
 인자로 문자열을 넘기면 getText함수를 아래와 같이 정의한 것과 같다
 ```js
